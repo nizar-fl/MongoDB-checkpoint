@@ -1,0 +1,8 @@
+mongosh
+use contact
+db.contactlist.insertMany([{Last_name: "Ben Lahmer", First_name: "Fares", Email: "fares@gmail.com", age:26},{Last_name: "Kefi", First_name: "Seif", Email: "kefi@gmail.com", age:15},{Last_name: "Fatnassi", First_name: "Sarra", Email: "sarra.f@gmail.com", age:40},{Last_name: "Ben Yahia", First_name: "Rym", age:4},{Last_name: "Cherif", First_name: "Sami", age:3}])
+db.contactlist.find({_id:ObjectId("638a2342764bdab009e8f09d")})
+db.contactlist.find({age:{$gt:18}})
+db.contactlist.find({Last_name :{$regex :/ah/}})
+db.contactlist.findOneAndUpdate({Last_name: "Kefi", First_name: "Seif"},{$set:{Last_name: "Kefi", First_name: "anis"}})
+db.contactlist.findOneAndDelete({age:{$lt:5}})
